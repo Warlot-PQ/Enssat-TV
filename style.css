@@ -1,0 +1,68 @@
+body {
+	background:url("img/noise.png");
+	margin-top:30px;
+	color:white;
+}
+
+#infoMail {
+	margin-top:10px;
+}
+
+.row {
+	margin-bottom:20px;
+}
+
+.bloc {
+	background:rgba(255, 255, 255, 0.1);
+	padding:20px;
+	margin-top:20px;
+	margin-bottom:10px;
+	border-radius:10px;
+}
+
+.folder-muted {
+	color:white;
+	display:inline-block;
+	margin-right:20px;
+	margin-bottom:30px;
+	text-align:center;
+}
+
+a.folder {
+	color:white;
+	text-decoration:none;
+	display:inline-block;
+	margin-right:20px;
+	margin-bottom:30px;
+	text-align:center;
+}
+
+.img-polaroid {
+	margin:5px;
+}
+
+.img-equipe {
+	border:solid white thin;
+}
+
+h1 {
+	border-bottom:solid white thin;
+	font-weight:normal;
+}
+
+h3 {
+	margin:0;
+}
+
+a, a:hover, a:visited {
+	color:white;
+}
+
+.text-black {
+	color:#333;
+}
+
+footer {
+	margin-top:10px;
+	border-top:solid white thin;
+}
