@@ -91,7 +91,7 @@ $(document).ready(function() {
 				<div class="span3">
 					<h4>Fabien JARACZEWSKI</h4>
 					<p>
-						Perchiste et monteur.
+						Monteur et perchiste.
 					</p>
 				</div>
 			</div>
