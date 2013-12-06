@@ -24,7 +24,7 @@
 </head>
 <body>
 <video id="my_video_1" class="video-js vjs-default-skin" controls preload="auto" width="940" height="530" data-setup="{}">
-  <source src="../videos/<?php if($q=='sd') echo 'sd/'; echo $film; ?>.mp4" type='video/mp4'>
+  <source src="../videos/<?php if($q=='sd') echo 'sd/'; echo $film; ?>.mp4" type='video/mp4' />
 </video>
 </body>
 </html>
