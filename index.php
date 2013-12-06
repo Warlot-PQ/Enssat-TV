@@ -2,6 +2,8 @@
 	include("haut.php");
 	require("ini.class.php");
 
+	setlocale (LC_TIME, 'fr_FR.utf8','fra');	
+
 	$videos=new ini();
 	$videos->m_fichier("videos.ini");
 	$nbVideos=$videos->nbGroup();
@@ -10,6 +12,27 @@
 	}
 	else {
 		$edition = $nbVideos;
+	}
+if(isset($_POST["DRsujet"]) && isset($_POST["DRdate"]) && isset($_POST["DRmail"]) && isset($_POST["DRdescription"]) && isset($_POST["DRcommentaire"]))
+	{
+		$msg = "Bonjour,\n\nCeci est un mail automatique de la page demande de reportage du site de l'Enssat-TV.\n";
+		$msg .= "Sujet : ".$_POST["DRsujet"];
+		if ($_POST["DRdate"] != "")
+		{
+			$msg .= "\nDate : ".$_POST["DRdate"];
+		}
+		$msg .= "\nDescription : ".$_POST["DRdescription"];
+		if ($_POST["DRmail"] != "")
+		{
+			$msg .= "\nMail de contact : ".$_POST["DRmail"];
+		}
+		$msg .= "\nCommentaire : ".$_POST["DRcommentaire"];
+		$msg .= "\nmail envoye à ".date("d/m/Y : H\hi");
+
+		$headers = "From: Enssat-TV\r\n"; // ici l'expediteur du mail
+		$headers .= "Content-Type: text/plain; charset=utf-8\r\n"; // ici on envoie le mail au format texte encodé en UTF-8
+		//$headers .= "Content-Transfer-Encoding: 8bit";
+		mail("nroux@enssat.fr", "Demande de reportage Enssat-TV", stripslashes($msg), $headers);
 	}
 ?>
 <div id="contenu">
@@ -26,7 +49,9 @@
 			<a id="previous-video" class="btn btn-inverse" <?php if($edition!=1) { ?>href="?e=<?php echo $edition-1; ?>"<?php } else {?> href="#" disabled<?php } ?>><i class="icon-chevron-left icon-white"></i></a>
 			<a id="next-video" class="btn btn-inverse" <?php if($edition!=$nbVideos) { ?>href="?e=<?php echo $edition+1; ?>"<?php } else {?> href="#" disabled<?php } ?>><i class="icon-chevron-right icon-white"></i></a>
 		</div>
+
 		<input id="resolution-button" type="button" style="margin-top:20px;margin-right:5px;font-weight:bold;" class="btn btn-inverse pull-right" value="HD" onclick="switchResolution();"/>
+		
 		<iframe id="iframe-video" width="940" height="530" src="<?php $videos->m_item('url'); echo $videos->valeur; ?>" frameborder="0" allowfullscreen></iframe>
 		<div class="bloc">
 			<?php $videos->m_item('description'); echo $videos->valeur; ?>
@@ -82,6 +107,10 @@ function is_mail(mail){
 }
 
 $(document).ready(function() {
+   var videopath = $('#iframe-video').attr("src");
+   if (videopath.indexOf("youtube") != -1)
+	$('#resolution-button').hide();
+
     // lorsque je soumets le formulaire
     $('#monForm').on('submit', function() {
 
