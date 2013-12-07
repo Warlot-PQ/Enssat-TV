@@ -33,7 +33,7 @@ $(document).ready(function() {
 				<div class="span3">
 					<h4>Marine CHOREL</h4>
 					<p>
-						Présidente et réalisateur de l'ENSSAT TV.
+						Présidente et réalisatrice de l'ENSSAT TV.
 					</p>
 				</div>
 			</div>
@@ -67,21 +67,42 @@ $(document).ready(function() {
 		<div class="bloc">
 			<div class="row" style="margin-bottom:0;">
 				<div class="span2">
-					<a class="fancybox" data-fancybox-group="equipe" href="img/equipe/raphael.jpg"><img class="img-equipe" src="img/equipe/thumbs/raphael.jpg" alt="Raphaël PINEAU" /></a>
+					<a class="fancybox" data-fancybox-group="equipe" href="img/equipe/florentin.jpg"><img class="img-equipe" src="img/equipe/thumbs/florentin.jpg" alt="Florentin Molimard" /></a>
 				</div>
 				<div class="span3">
-					<h4>Raphaël PINEAU</h4>
+					<h4>Florentin Molimard</h4>
 					<p>
-						Chef monteur.
+						Photographe.
 					</p>
 				</div>
 			</div>
 		</div>
 		<div class="bloc">
-			<h4>Nicolas ROUX</h4>
-			<p>
-				Responsable communication et logistique.
-			</p>
+			<div class="row" style="margin-bottom:0;">
+				<div class="span2">
+					<a class="fancybox" data-fancybox-group="equipe" href="img/equipe/nicolasR.jpg"><img class="img-equipe" src="img/equipe/thumbs/nicolasR.jpg" alt="Nicolas ROUX" /></a>
+				</div>
+				<div class="span3">
+					<h4>Nicolas ROUX</h4>
+					<p>
+						Responsable communication et logistique.
+					</p>
+				</div>
+			</div>
+		</div>
+		
+		<div class="bloc">
+			<div class="row" style="margin-bottom:0;">
+				<div class="span2">
+					<a class="fancybox" data-fancybox-group="equipe" href="img/equipe/pierre-quentin.jpg"><img class="img-equipe" src="img/equipe/thumbs/pierre-quentin.jpg" alt="Pierre-Quentin Warlot" /></a>
+				</div>
+				<div class="span3">
+					<h4>Pierre-Quentin Warlot</h4>
+					<p>
+						Chef monteur et Webmaster.
+					</p>
+				</div>
+			</div>
 		</div>
 		<div class="bloc">
 			<div class="row" style="margin-bottom:0;">
@@ -97,12 +118,6 @@ $(document).ready(function() {
 			</div>
 		</div>
 		<div class="bloc">
-			<h4>Étienne CHARRON</h4>
-			<p>
-				Monteur.
-			</p>
-		</div>
-		<div class="bloc">
 			<div class="row" style="margin-bottom:0;">
 				<div class="span2">
 					<a class="fancybox" data-fancybox-group="equipe" href="img/equipe/mathias.jpg"><img class="img-equipe" src="img/equipe/thumbs/mathias.jpg" alt="Mathias BERCIANO" /></a>
@@ -114,13 +129,85 @@ $(document).ready(function() {
 					</p>
 				</div>
 			</div>
+		</div> 
+		<div class="bloc">
+			<div class="row" style="margin-bottom:0;">
+				<div class="span2">
+					<a class="fancybox" data-fancybox-group="equipe" href="img/equipe/laurent.jpg"><img class="img-equipe" src="img/equipe/thumbs/laurent.jpg" alt="Laurent Laluque" /></a>
+				</div>
+				<div class="span3">
+					<h4>Laurent Laluque</h4>
+					<p>
+						Nouvel arrivant.
+					</p>
+				</div>
+			</div>
+		</div> 
+		<div class="bloc">
+			<div class="row" style="margin-bottom:0;">
+				<div class="span2">
+					<a class="fancybox" data-fancybox-group="equipe" href="img/equipe/nicolasG.jpg"><img class="img-equipe" src="img/equipe/thumbs/nicolasG.jpg" alt="Nicolas Guyot" /></a>
+				</div>
+				<div class="span3">
+					<h4>Nicolas Guyot</h4>
+					<p>
+						Nouvel arrivant.
+					</p>
+				</div>
+			</div>
+		</div> 
+		<div class="bloc">
+			<h4>Sylvain Ravard</h4>
+			<p>
+				Nouvel arrivant.
+			</p>
 		</div>
 	</div>
 	<div class="span6">
+	
 		<div class="bloc">
-			<h4>Léo LUY</h4>
+			<div class="row" style="margin-bottom:0;">
+				<div class="span2">
+					<a class="fancybox" data-fancybox-group="equipe" href="img/equipe/léo.jpg"><img class="img-equipe" src="img/equipe/thumbs/léo.jpg" alt="Léo LUY" /></a>
+				</div>
+				<div class="span3">
+					<h4>Léo LUY</h4>
+					<p>
+						Présentateur du JT.
+					</p>
+				</div>
+			</div>
+		</div> 
+		<div class="bloc">
+			<div class="row" style="margin-bottom:0;">
+				<div class="span2">
+					<a class="fancybox" data-fancybox-group="equipe" href="img/equipe/nicolasH.jpg"><img class="img-equipe" src="img/equipe/thumbs/nicolasH.jpg" alt="Nicolas Hainez" /></a>
+				</div>
+				<div class="span3">
+					<h4>Nicolas Hainez</h4>
+					<p>
+						Nouvel arrivant.
+					</p>
+				</div>
+			</div>
+		</div> 
+		<div class="bloc">
+			<div class="row" style="margin-bottom:0;">
+				<div class="span2">
+					<a class="fancybox" data-fancybox-group="equipe" href="img/equipe/tramy.jpg"><img class="img-equipe" src="img/equipe/thumbs/tramy.jpg" alt="Tramy Nguyen" /></a>
+				</div>
+				<div class="span3">
+					<h4>Tramy Nguyen</h4>
+					<p>
+						Présentatrice.
+					</p>
+				</div>
+			</div>
+		</div> 
+		<div class="bloc">
+			<h4>Héline Téléphe</h4>
 			<p>
-				Présentateur du JT.
+				Présentatrice.
 			</p>
 		</div>
 		<div class="bloc">
@@ -145,19 +232,6 @@ $(document).ready(function() {
 					<h4>Kilian LE FEE</h4>
 					<p>
 						Présentateur du JT et voix off.
-					</p>
-				</div>
-			</div>
-		</div>
-		<div class="bloc">
-			<div class="row" style="margin-bottom:0;">
-				<div class="span2">
-					<a class="fancybox" data-fancybox-group="equipe" href="img/equipe/ronan.jpg"><img class="img-equipe" src="img/equipe/thumbs/ronan.jpg" alt="Ronan MAUGUEN" /></a>
-				</div>
-				<div class="span3">
-					<h4>Ronan MAUGUEN</h4>
-					<p>
-						Envoyé spécial.
 					</p>
 				</div>
 			</div>
@@ -197,15 +271,29 @@ $(document).ready(function() {
 		<div class="bloc">
 			<div class="row" style="margin-bottom:0;">
 				<div class="span2">
-					<a class="fancybox" data-fancybox-group="equipe" href="img/equipe/kevin.jpg"><img class="img-equipe" src="img/equipe/thumbs/kevin.jpg" alt="Kévin VYTHELINGUM" /></a>
+					<a class="fancybox" data-fancybox-group="equipe" href="img/equipe/quentin.jpg"><img class="img-equipe" src="img/equipe/thumbs/quentin.jpg" alt="Quentin Viotto" /></a>
 				</div>
 				<div class="span3">
-					<h4>Kévin VYTHELINGUM</h4>
+					<h4>Quentin Viotto</h4>
 					<p>
-						Webmaster et animateur de la rubrique "La Minute Informatique".
+						Animateur.
 					</p>
 				</div>
 			</div>
+		</div> 
+		<div class="bloc">
+			<div class="row" style="margin-bottom:0;">
+				<div class="span2">
+					<a class="fancybox" data-fancybox-group="equipe" href="img/equipe/maxime.jpg"><img class="img-equipe" src="img/equipe/thumbs/maxime.jpg" alt="Maxime Chenou" /></a>
+				</div>
+				<div class="span3">
+					<h4>Maxime Chenou</h4>
+					<p>
+						Nouvel arrivant.
+					</p>
+				</div>
+			</div>
+		</div> 
 		</div>
 	</div>
 </div>
