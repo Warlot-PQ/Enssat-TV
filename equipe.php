@@ -159,7 +159,7 @@ $(document).ready(function() {
 		<div class="bloc">
 			<h4>Sylvain Ravard</h4>
 			<p>
-				Nouvel arrivant.
+				Monteur.
 			</p>
 		</div>
 	</div>
