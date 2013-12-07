@@ -70,7 +70,7 @@ $(document).ready(function() {
 					<a class="fancybox" data-fancybox-group="equipe" href="img/equipe/florentin.jpg"><img class="img-equipe" src="img/equipe/thumbs/florentin.jpg" alt="Florentin Molimard" /></a>
 				</div>
 				<div class="span3">
-					<h4>Florentin Molimard</h4>
+					<h4>Florentin MOLIMARD</h4>
 					<p>
 						Photographe.
 					</p>
@@ -97,7 +97,7 @@ $(document).ready(function() {
 					<a class="fancybox" data-fancybox-group="equipe" href="img/equipe/pierre-quentin.jpg"><img class="img-equipe" src="img/equipe/thumbs/pierre-quentin.jpg" alt="Pierre-Quentin Warlot" /></a>
 				</div>
 				<div class="span3">
-					<h4>Pierre-Quentin Warlot</h4>
+					<h4>Pierre-Quentin WARLOT</h4>
 					<p>
 						Chef monteur et Webmaster.
 					</p>
@@ -136,7 +136,7 @@ $(document).ready(function() {
 					<a class="fancybox" data-fancybox-group="equipe" href="img/equipe/laurent.jpg"><img class="img-equipe" src="img/equipe/thumbs/laurent.jpg" alt="Laurent Laluque" /></a>
 				</div>
 				<div class="span3">
-					<h4>Laurent Laluque</h4>
+					<h4>Laurent LALUQUE</h4>
 					<p>
 						Nouvel arrivant.
 					</p>
@@ -149,7 +149,7 @@ $(document).ready(function() {
 					<a class="fancybox" data-fancybox-group="equipe" href="img/equipe/nicolasG.jpg"><img class="img-equipe" src="img/equipe/thumbs/nicolasG.jpg" alt="Nicolas Guyot" /></a>
 				</div>
 				<div class="span3">
-					<h4>Nicolas Guyot</h4>
+					<h4>Nicolas GUYOT</h4>
 					<p>
 						Nouvel arrivant.
 					</p>
@@ -184,7 +184,7 @@ $(document).ready(function() {
 					<a class="fancybox" data-fancybox-group="equipe" href="img/equipe/nicolasH.jpg"><img class="img-equipe" src="img/equipe/thumbs/nicolasH.jpg" alt="Nicolas Hainez" /></a>
 				</div>
 				<div class="span3">
-					<h4>Nicolas Hainez</h4>
+					<h4>Nicolas HAINEZ</h4>
 					<p>
 						Nouvel arrivant.
 					</p>
@@ -197,7 +197,7 @@ $(document).ready(function() {
 					<a class="fancybox" data-fancybox-group="equipe" href="img/equipe/tramy.jpg"><img class="img-equipe" src="img/equipe/thumbs/tramy.jpg" alt="Tramy Nguyen" /></a>
 				</div>
 				<div class="span3">
-					<h4>Tramy Nguyen</h4>
+					<h4>Tramy NGUYEN</h4>
 					<p>
 						Présentatrice.
 					</p>
@@ -205,7 +205,7 @@ $(document).ready(function() {
 			</div>
 		</div> 
 		<div class="bloc">
-			<h4>Héline Téléphe</h4>
+			<h4>Héline TELEPHE</h4>
 			<p>
 				Présentatrice.
 			</p>
@@ -274,7 +274,7 @@ $(document).ready(function() {
 					<a class="fancybox" data-fancybox-group="equipe" href="img/equipe/quentin.jpg"><img class="img-equipe" src="img/equipe/thumbs/quentin.jpg" alt="Quentin Viotto" /></a>
 				</div>
 				<div class="span3">
-					<h4>Quentin Viotto</h4>
+					<h4>Quentin VIOTTO</h4>
 					<p>
 						Animateur.
 					</p>
@@ -287,7 +287,7 @@ $(document).ready(function() {
 					<a class="fancybox" data-fancybox-group="equipe" href="img/equipe/maxime.jpg"><img class="img-equipe" src="img/equipe/thumbs/maxime.jpg" alt="Maxime Chenou" /></a>
 				</div>
 				<div class="span3">
-					<h4>Maxime Chenou</h4>
+					<h4>Maxime CHENOU</h4>
 					<p>
 						Nouvel arrivant.
 					</p>
