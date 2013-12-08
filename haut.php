@@ -69,7 +69,7 @@
 				fwrite($fichier, $text);
 				fclose($fichier);
 				//On lui envoie un cookie
-				setcookie('ip', $_SERVER['REMOTE_ADDR'], time()+10);
+				setcookie('ip', $_SERVER['REMOTE_ADDR'], time()+24*3600);
 			}
 			//FIN COMPTEUR VISITEUR
 		?>
