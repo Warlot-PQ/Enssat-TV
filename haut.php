@@ -48,7 +48,7 @@
 				if ($date != date("d/m/Y"))
 				{
 					$visites = 0;
-					$text .= "\n".date("d/m/Y")." ".$visites;
+					$text .= date("d/m/Y")." ".$visites;
 					fwrite($fichier, $text);
 				}
 			}

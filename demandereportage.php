@@ -1,16 +1,6 @@
 <?php
 	include("haut.php");
 	require("ini.class.php");
-
-	$videos=new ini();
-	$videos->m_fichier("videos.ini");
-	$nbVideos=$videos->nbGroup();
-	if(isset($_GET["e"])) {
-		$edition = stripslashes($_GET["e"]);
-	}
-	else {
-		$edition = $nbVideos;
-	}
 ?>
 <div id="contenu">
 <div class="row">
