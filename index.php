@@ -1,6 +1,6 @@
 <?php
-	include("haut.php");
-	require("ini.class.php");
+	include("haut.php");;
+	//require("ini.class.php");
 
 	setlocale (LC_TIME, 'fr_FR.utf8','fra');	
 
@@ -49,10 +49,30 @@ if(isset($_POST["DRsujet"]) && isset($_POST["DRdate"]) && isset($_POST["DRmail"]
 			<a id="previous-video" class="btn btn-inverse" <?php if($edition!=1) { ?>href="?e=<?php echo $edition-1; ?>"<?php } else {?> href="#" disabled<?php } ?>><i class="icon-chevron-left icon-white"></i></a>
 			<a id="next-video" class="btn btn-inverse" <?php if($edition!=$nbVideos) { ?>href="?e=<?php echo $edition+1; ?>"<?php } else {?> href="#" disabled<?php } ?>><i class="icon-chevron-right icon-white"></i></a>
 		</div>
-
+		<?php
+		$videos->m_item('titre');
+		if ($videos->valeur != "Édition 8")
+		{
+		?>
 		<input id="resolution-button" type="button" style="margin-top:20px;margin-right:5px;font-weight:bold;" class="btn btn-inverse pull-right" value="HD" onclick="switchResolution();"/>
 		
 		<iframe id="iframe-video" width="940" height="530" src="<?php $videos->m_item('url'); echo $videos->valeur; ?>" frameborder="0" allowfullscreen></iframe>
+		<?php		
+		}
+		else
+		{
+			?>
+			<br /><br /><br />
+			<div class="bloc" style="text-align:center;">
+				<img src="img/EnssatTv8-site web.png" width=300 alt="Image Edition speciale Noel" />
+				<br /><br />
+				Webmaster en vacances !
+				<br />
+				Rendez vous à la rentrée pour ceux qui n'ont pas eu la chance de visionner notre édition spéciale Noel
+			</div>
+			<?php
+		}
+		?>
 		<div class="bloc">
 			<?php $videos->m_item('description'); echo $videos->valeur; ?>
 		</div>

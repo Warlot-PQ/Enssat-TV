@@ -186,7 +186,7 @@ $(document).ready(function() {
 				<div class="span3">
 					<h4>Nicolas HAINEZ</h4>
 					<p>
-						Nouvel arrivant.
+						Présentateur.
 					</p>
 				</div>
 			</div>
@@ -199,7 +199,7 @@ $(document).ready(function() {
 				<div class="span3">
 					<h4>Tramy NGUYEN</h4>
 					<p>
-						Présentatrice.
+						Nouvel arrivant.
 					</p>
 				</div>
 			</div>
@@ -261,12 +261,6 @@ $(document).ready(function() {
 					</p>
 				</div>
 			</div>
-		</div>
-		<div class="bloc">
-			<h4>Mélissa DALI</h4>
-			<p>
-				Animatrice de la rubrique "Inside ENSSAT".
-			</p>
 		</div>
 		<div class="bloc">
 			<div class="row" style="margin-bottom:0;">

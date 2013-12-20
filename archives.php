@@ -1,6 +1,6 @@
 <?php
 	include("haut.php");
-	require("ini.class.php");
+	//require("ini.class.php");
 	
 	$videos=new ini();
 	$videos->m_fichier("videos.ini");

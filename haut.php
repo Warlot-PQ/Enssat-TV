@@ -25,51 +25,38 @@
 	<header>
 		<h1>ENSSAT TV</h1>
 		<?php
+			require("ini.class.php");	
 			//DEBUT COMPTEUR VISITEUR
-			if (file_exists ("./compteur.txt"))
+			if (!isset($_COOKIE['ip'])) //Si pas de cookie IP
 			{
-				$fichier = fopen("./compteur.txt","r");
-				$numeroLigne = 0;		
-				//On parcourt toutes les lignes du fichiers pour trouver la date du jours
-				do
+				if (file_exists("compteur.ini"))
 				{
-					$ligne = fgets($fichier, 255);
-					$date = substr($ligne, 0, 10);
-					$visites = substr($ligne, 10);
-					if ($numeroLigne == 0)
-						$text = $ligne;
+					$item = "visiteurs";
+					$heure = date("H") + 1;
+					
+					$compteur = new ini();
+					$compteur->m_fichier("compteur.ini");
+					
+					$compteur->m_groupe(date("d/m/Y"));
+					$compteur->m_item($item);
+					if ($compteur->valeur != NULL) //Si la valeur éxiste (donc si on a déjà un groupe - date du jour)
+					{
+						//incrémente le nombre visiteur total
+						$compteur->m_put($compteur->valeur+=1);
+						//sauvegarde des modif
+						$compteur->save();
+					}
 					else
-						$text .= $ligne;
-					feof($fichier);
-					$numeroLigne++;
-				}
-				while ($date != date("d/m/Y") && $ligne != false);
-				//Si la date n'est pas répértorié (aucun visiteur pour le jours actuel), on l'ajoute
-				if ($date != date("d/m/Y"))
-				{
-					$visites = 0;
-					$text .= date("d/m/Y")." ".$visites;
-					fwrite($fichier, $text);
-				}
-			}
-			else
-			{//Si le fichier de comptage n'éxiste pas
-				$fichier = fopen("./compteur.txt","w+");
-				$visites = 0;
-				$text = date("d/m/Y")." ".$visites;
-				fwrite($fichier, $text);
-			}
-			fclose($fichier);
-			//Si le visiteur(client) ne possède pas le cookie
-			if (!isset($_COOKIE['ip']))
-			{
-				$visites++;
-				$fichier = fopen("./compteur.txt", "w");
-				$text = substr($text, 0, strlen($text) - 1).$visites;
-				fwrite($fichier, $text);
-				fclose($fichier);
-				//On lui envoie un cookie
-				setcookie('ip', $_SERVER['REMOTE_ADDR'], time()+24*3600);
+					{//Aucun groupe n'éxiste (pas de visiteur pour aujourd'hui)
+						$chemin = "compteur.ini";
+						$texte = "\n[".date("d/m/Y")."]\n".$item."=1";
+						$handle = fopen($chemin, "a+");
+						fwrite($handle, $texte);
+						fclose($handle);
+					}
+					//Envoi d'un cookie IP
+					setcookie('ip', $_SERVER['REMOTE_ADDR'], time()+24*3600);
+				}	
 			}
 			//FIN COMPTEUR VISITEUR
 		?>

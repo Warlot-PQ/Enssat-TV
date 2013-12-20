@@ -1,6 +1,6 @@
 <?php
 	include("haut.php");
-	require("ini.class.php");
+	//require("ini.class.php");
 	
 	$photos=new ini();
 	$g = htmlentities($_GET['g']);
