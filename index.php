@@ -13,7 +13,10 @@
 	else {
 		$edition = $nbVideos;
 	}
-if(isset($_POST["DRsujet"]) && isset($_POST["DRdate"]) && isset($_POST["DRmail"]) && isset($_POST["DRdescription"]) && isset($_POST["DRcommentaire"]))
+	//Si demande de reportage
+	if(isset($_POST["DRsujet"]) && isset($_POST["DRdate"])
+	&& isset($_POST["DRmail"]) && isset($_POST["DRdescription"])
+	&& isset($_POST["DRcommentaire"]))
 	{
 		$msg = "Bonjour,\n\nCeci est un mail automatique de la page demande de reportage du site de l'Enssat-TV.\n";
 		$msg .= "Sujet : ".$_POST["DRsujet"];
@@ -34,6 +37,39 @@ if(isset($_POST["DRsujet"]) && isset($_POST["DRdate"]) && isset($_POST["DRmail"]
 		//$headers .= "Content-Transfer-Encoding: 8bit";
 		mail("nroux@enssat.fr", "Demande de reportage Enssat-TV", stripslashes($msg), $headers);
 	}
+	//Si demande de recrutement
+	if(isset($_POST['RECRUTnom']) && isset($_POST['RECRUTprenom'])
+	&& isset($_POST['RECRUTfiliere']) && isset($_POST['RECRUTfiliereautre'])
+	&& isset($_POST['RECRUTmail']) && isset($_POST['RECRUTmotiv'])
+	&& isset($_POST['RECRUTskill']) && isset($_POST['RECRUTskillautre']))
+	{
+		$msg = "Bonjour,\n\nCeci est un mail automatique de la page Rejoignez-nous du site de l'Enssat-TV.\n";
+		$msg .= "\"".$_POST['RECRUTnom']." ".$_POST['RECRUTprenom']."\" venant de ";
+		if ($_POST['RECRUTfiliere'] == "Autre")
+		{
+			$msg .= "\"".$_POST['RECRUTfiliereautre']."\"";
+		}
+		else
+		{
+			$msg .= "\"".$_POST['RECRUTfiliere']."\"";
+		}
+		$msg .= " à remplie le formulaire de recrutement le ".date("d/m/Y");
+		$msg .= "\nSom mail : \"".$_POST['RECRUTmail']."\"";
+		$msg .= "\nSes motivations : \"".$_POST['RECRUTmotiv']."\"";
+		$msg .= "\nSes compétences : ";
+		if($_POST['RECRUTskill'] == "Autre")
+		{
+			$msg .= "\"".$_POST['RECRUTskillautre']."\"";
+		}
+		else
+		{
+			$msg .= "\"".$_POST['RECRUTskill']."\"";
+		}
+		$headers = "From: Enssat-TV\r\n"; // ici l'expediteur du mail
+		$headers .= "Content-Type: text/plain; charset=utf-8\r\n"; // ici on envoie le mail au format texte encodé en UTF-8
+		//$headers .= "Content-Transfer-Encoding: 8bit";
+		mail("nroux@enssat.fr", "Demande de reportage Enssat-TV", stripslashes($msg), $headers);
+	}
 ?>
 <div id="contenu">
 <div class="row">
@@ -49,30 +85,9 @@ if(isset($_POST["DRsujet"]) && isset($_POST["DRdate"]) && isset($_POST["DRmail"]
 			<a id="previous-video" class="btn btn-inverse" <?php if($edition!=1) { ?>href="?e=<?php echo $edition-1; ?>"<?php } else {?> href="#" disabled<?php } ?>><i class="icon-chevron-left icon-white"></i></a>
 			<a id="next-video" class="btn btn-inverse" <?php if($edition!=$nbVideos) { ?>href="?e=<?php echo $edition+1; ?>"<?php } else {?> href="#" disabled<?php } ?>><i class="icon-chevron-right icon-white"></i></a>
 		</div>
-		<?php
-		$videos->m_item('titre');
-		if ($videos->valeur != "Édition 8")
-		{
-		?>
 		<input id="resolution-button" type="button" style="margin-top:20px;margin-right:5px;font-weight:bold;" class="btn btn-inverse pull-right" value="HD" onclick="switchResolution();"/>
 		
 		<iframe id="iframe-video" width="940" height="530" src="<?php $videos->m_item('url'); echo $videos->valeur; ?>" frameborder="0" allowfullscreen></iframe>
-		<?php		
-		}
-		else
-		{
-			?>
-			<br /><br /><br />
-			<div class="bloc" style="text-align:center;">
-				<img src="img/EnssatTv8-site web.png" width=300 alt="Image Edition speciale Noel" />
-				<br /><br />
-				Webmaster en vacances !
-				<br />
-				Rendez vous à la rentrée pour ceux qui n'ont pas eu la chance de visionner notre édition spéciale Noel
-			</div>
-			<?php
-		}
-		?>
 		<div class="bloc">
 			<?php $videos->m_item('description'); echo $videos->valeur; ?>
 		</div>

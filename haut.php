@@ -18,8 +18,9 @@
 		<div id="nav" class="btn-group">
 			<a class="btn btn-inverse" href="index.php"><i class="icon-home icon-white"></i> Accueil</a>
 			<a class="btn btn-inverse" href="archives.php"><i class="icon-film icon-white"></i> Archives</a>
-			<a class="btn btn-inverse" href="equipe.php"><i class="icon-search icon-white"></i> L'équipe</a>
+			<a class="btn btn-inverse" href="equipe.php"><i class="icon-th-list icon-white"></i> L'équipe</a>
 			<a class="btn btn-inverse" href="demandereportage.php"><i class="icon-search icon-white"></i> Demande de reportage</a>
+			<a class="btn btn-inverse" href="rejoigneznous.php"><i class="icon-ok icon-white"></i> Rejoignez-nous</a>
 		</div>
 	</nav>
 	<header>
