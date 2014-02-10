@@ -1,6 +1,7 @@
 <?php
 	include("haut.php");
-	//require("ini.class.php");
+	$cryptinstall="captcha/cryptographp.fct.php";
+	include $cryptinstall; 
 ?>
 <div id="contenu">
 <div class="row">
@@ -8,7 +9,7 @@
 		<h2>Rejoignez-nous</h2>
 		<div class="bloc">
 			<p style="text-align:justify;">
-				L'Enssat TV a besoin de vous. Nous recherchons des personnes motivées pour nous aider à faire vivre le club et à couvrir les nombreux événements concernant les Enssatiennes et les Enssatiens. 
+				L'Enssat TV a besoin de vous. Nous recherchons des personnes motivés pour nous aider à faire vivre le club et à couvrir les nombreux événements concernant les Enssatiens et les Enssatiennes. 
 				Aucune compétence n'est requise, venez comme vous êtes.
 			</p>
 			<p>
@@ -24,7 +25,7 @@
 		<h3>We Need You !</h3>
 			<div class="bloc">
 				<div class="row" style="margin-bottom:0;text-align:center;">
-					<form id="DRmonForm" name="DRmonForm" method="POST" onsubmit="return verifForm();" action="index.php">
+					<form id="DRmonForm" name="DRmonForm" method="POST" onsubmit="return verifForm(<?PHP echo SID; ?>);" action="index.php">
 						<div style="display:inline-block;text-align:left;">
 							<p>
 								Nom :
@@ -57,7 +58,7 @@
 									Précisez :
 									<input id="RECRUTfiliereautre" name="RECRUTfiliereautre" type=text style="width:150px;" />
 								</span>
-							</p><p>
+							<p>
 								Mail :
 							</p><p>
 								<input id="RECRUTmail" name="RECRUTmail" type=text />
@@ -91,8 +92,13 @@
 									Précisez :
 									<input id="RECRUTskillautre" name="RECRUTskillautre" type=text style="width:150px;" />
 								</span>
+							<p>		
+								<?php dsp_crypt(0,1); ?>
+								Recopiez le code:<br>
+								<input type="text" name="code"><br>
+								<span id="check" style="text-align:center;color:red;"></span>
 							</p><p style="margin-top:20px;">
-								<input class="btn btn-primary" type="submit" value="Enregistrer" />
+								<input class="btn btn-primary" name="btnSubmit" type="submit" value="Enregistrer" />
 							</p>
 						</div>
 					</form>
@@ -131,7 +137,7 @@ function is_mail(mail)
 	return(reg.test(mail));
 }
 
-function verifForm() 
+function verifForm(sid) 
 {
 	// je récupère les valeurs
 	var mail = $('#RECRUTmail').val();
@@ -169,7 +175,38 @@ function verifForm()
 		alert("Vérifiez les champs Nom, Prénom et motivations");
 		return false;
 	}
-	return true;
+	//Si tout est ok on check le captcha
+	var xmlhttp;
+	if (window.XMLHttpRequest)
+	{// code for IE7+, Firefox, Chrome, Opera, Safari
+		xmlhttp=new XMLHttpRequest();
+	}
+	else
+	{// code for IE6, IE5
+		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	xmlhttp.onreadystatechange=function()
+	{
+		if (xmlhttp.readyState==4 && xmlhttp.status==200)
+		{
+			document.getElementById("check").innerHTML = xmlhttp.responseText;
+			document.images.cryptogram.src='captcha/cryptographp.php?cfg=0&'+Math.round(Math.random(0)*1000)+1;
+			var valeur = $('#check').text();
+			if (valeur == "Captcha correct")
+			{
+				 document.forms["DRmonForm"].submit();
+			}
+		}
+		else
+		{
+			$('#check').html('<img src="../loading.png" />');
+		}
+	}
+	xmlhttp.open("POST","captcha/verifier.php",true);
+	xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+	xmlhttp.send("sid="+sid+"&code="+DRmonForm.elements['code'].value);
+	
+	return false;
 }
 </script>
 <?php include("bas.php"); ?>

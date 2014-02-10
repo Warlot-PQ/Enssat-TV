@@ -68,7 +68,7 @@
 		$headers = "From: Enssat-TV\r\n"; // ici l'expediteur du mail
 		$headers .= "Content-Type: text/plain; charset=utf-8\r\n"; // ici on envoie le mail au format texte encodé en UTF-8
 		//$headers .= "Content-Transfer-Encoding: 8bit";
-		mail("nroux@enssat.fr", "Demande de reportage Enssat-TV", stripslashes($msg), $headers);
+		mail("nroux@enssat.fr", "Demande de recrutement Enssat-TV", stripslashes($msg), $headers);
 	}
 ?>
 <div id="contenu">

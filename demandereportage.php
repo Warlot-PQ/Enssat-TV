@@ -1,6 +1,7 @@
 <?php
 	include("haut.php");
-	//require("ini.class.php");
+	$cryptinstall="captcha/cryptographp.fct.php";
+	include $cryptinstall; 
 ?>
 <div id="contenu">
 <div class="row">
@@ -20,33 +21,38 @@
 		<h3>Enregistrement de votre demande</h3>
 			<div class="bloc">
 				<div class="row" style="margin-bottom:0;text-align:center;">
-					<form id="DRmonForm" name="DRmonForm" method="POST" onsubmit="return verifForm();" action="index.php">
+					<form id="DRmonForm" name="DRmonForm" method="POST" onsubmit="return verifForm(<?PHP echo SID; ?>);" action="index.php">
 						<div style="display:inline-block;text-align:left;">
 							<p>
-								Sujet
+								Sujet :
 							</p><p>
 								<input id="DRsujet" name="DRsujet" type=text />
 							</p><p>
-								Date de l'événement (facultatif)
+								Date de l'événement : (facultatif)
 							</p><p>
 								<input id="DRdate" name="DRdate" type=text />
 							</p><p>
-								Description
+								Description :
 							</p><p>
 								<textarea id="DRdescription" name="DRdescription" rows="5" cols="0" style="resize:none;"></textarea>
 							</p>
 						</div>
 						<div style="display:inline-block;text-align:left;margin-left:170px;vertical-align:top;">
 							<p>
-								Mail de contact (facultatif)
+								Mail de contact : (facultatif)
 							</p><p>
 								<input id="DRmail" name="DRmail" type=text />
 							</p><p>
-								Commentaire (facultatif)
+								Commentaire : (facultatif)
 							</p><p>
 								<textarea id="DRcommentaire" name="DRcommentaire" rows="5" cols="0" style="resize:none;"></textarea>
-							</p><p>
-								<input class="btn btn-primary" type="submit" value="Enregistrer" />
+							</p><p>		
+								<?php dsp_crypt(0,1); ?>
+								Recopiez le code:<br>
+								<input type="text" name="code"><br>
+								<span id="check" style="text-align:center;color:red;"></span>
+							</p><p style="margin-top:20px;">
+								<input class="btn btn-primary" name="btnSubmit" type="submit" value="Enregistrer" />
 							</p>
 						</div>
 					</form>
@@ -66,7 +72,7 @@ function is_mail(mail){
 	return(reg.test(mail));
 }
 
-function verifForm() 
+function verifForm(sid) 
 {
 	// je récupère les valeurs
 	var mail = $('#DRmail').val();
@@ -83,7 +89,38 @@ function verifForm()
 		alert("Champs incomplet");
 		return false;
 	}
-	return true;
+	//Si tout est ok on check le captcha
+	var xmlhttp;
+	if (window.XMLHttpRequest)
+	{// code for IE7+, Firefox, Chrome, Opera, Safari
+		xmlhttp=new XMLHttpRequest();
+	}
+	else
+	{// code for IE6, IE5
+		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	xmlhttp.onreadystatechange=function()
+	{
+		if (xmlhttp.readyState==4 && xmlhttp.status==200)
+		{
+			document.getElementById("check").innerHTML = xmlhttp.responseText;
+			document.images.cryptogram.src='captcha/cryptographp.php?cfg=0&'+Math.round(Math.random(0)*1000)+1;
+			var valeur = $('#check').text();
+			if (valeur == "Captcha correct")
+			{
+				 document.forms["DRmonForm"].submit();
+			}
+		}
+		else
+		{
+			$('#check').html('<img src="../loading.png" />');
+		}
+	}
+	xmlhttp.open("POST","captcha/verifier.php",true);
+	xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+	xmlhttp.send("sid="+sid+"&code="+DRmonForm.elements['code'].value);
+	
+	return false;
 }
 </script>
 <?php include("bas.php"); ?>
