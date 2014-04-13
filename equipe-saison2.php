@@ -22,7 +22,7 @@
 				<div class="span3">
 					<h4>Marine CHOREL</h4>
 					<p>
-						Ex-Présidente et réalisatrice de l'ENSSAT TV.
+						Présidente d'Honneur.
 					</p>
 				</div>
 			</div>

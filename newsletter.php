@@ -4,5 +4,5 @@ $mail = $_POST["mail"];
 $msg = "Newsletter ENSSAT TV - Un utilisateur souhaite s'inscrire : $mail";
 
 //envoi du message
-mail('kvythel@gmail.com', 'Inscription newsletter ENSSAT TV', $msg);
+mail('pwarlot@enssat.fr', 'Inscription newsletter ENSSAT TV', $msg);
 ?>

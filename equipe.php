@@ -1,5 +1,8 @@
 <?php include("haut.php"); ?>
 <script type="text/javascript">
+$(document).ready(function() {
+	$(".fancybox").fancybox();
+});
 function Chargement_Equipe(id_clicked)
 {
 	var xmlhttp;

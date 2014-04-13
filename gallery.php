@@ -18,7 +18,7 @@ $(document).ready(function() {
 	<h2 class="pull-right"><?php $photos->m_item('nom'); echo $photos->valeur; ?></h2>
 </div>
 <div id="contenu" class="row">
-	<div class="span12">
+	<div class="span12" style="text-align:center;">
 	
 <?php
 while ($fichier = readdir($dir)) {
