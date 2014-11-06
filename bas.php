@@ -1,5 +1,5 @@
 	<footer>
-		<p><small>ENSSAT TV &copy; 2013 - Tous droits réservés</small></p>
+		<p><small>ENSSAT TV &copy; 2014 - Tous droits réservés</small></p>
 	</footer>
 </div>
 </body>

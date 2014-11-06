@@ -88,6 +88,11 @@
 		<input id="resolution-button" type="button" style="margin-top:20px;margin-right:5px;font-weight:bold;" class="btn btn-inverse pull-right" value="HD" onclick="switchResolution();"/>
 		
 		<iframe id="iframe-video" width="940" height="530" src="<?php $videos->m_item('url'); echo $videos->valeur; ?>" frameborder="0" allowfullscreen></iframe>
+		
+<?php $videos->m_item('id');
+if($videos->valeur == '18') { ?>
+<div style="text-align: center;"><a href="http://www.dailymotion.com/video/x1xvhu2_ff1j-2014-enssa-tourne-productions-enssat-super-operating-system-chrono-d-or-et-coup-de-coeur-du-pub_shortfilms">Retrouvez le court métrage d'Enssat TV et du club court métrage, lauréat du prix du jury et du public !</a></div>
+	<?php } ?>
 		<div class="bloc">
 			<?php $videos->m_item('description'); echo $videos->valeur; ?>
 		</div>

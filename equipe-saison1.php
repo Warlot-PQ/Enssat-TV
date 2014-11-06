@@ -3,7 +3,7 @@
                 <div class="bloc">
                         <div class="row" style="margin-bottom:0;">
                                 <div class="span2">
-                                        <a class="fancybox" data-fancybox-group="equipe" href="img/equipe/marine.jpg"><img class="img-equipe" src="img/equipe/thumbs/marine.jpg" alt="Marine CHOREL" /></a>
+                                        <a class="fancybox" data-fancybox-group="equipe" href="img/equipe/marine bis.jpg"><img class="img-equipe" src="img/equipe/thumbs/marine bis.jpg" alt="Marine CHOREL" /></a>
                                 </div>
                                 <div class="span3">
                                         <h4>Marine CHOREL</h4>

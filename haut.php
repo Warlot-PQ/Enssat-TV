@@ -26,7 +26,7 @@
 	<header>
 		<h1>ENSSAT TV</h1>
 		<?php
-			require("ini.class.php");	
+			include_once("ini.class.php");	
 			//DEBUT COMPTEUR VISITEUR
 			if (!isset($_COOKIE['ip'])) //Si pas de cookie IP
 			{
